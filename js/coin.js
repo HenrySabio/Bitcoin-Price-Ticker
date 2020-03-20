@@ -23,5 +23,9 @@ navLinks.forEach(link => {
         currency = this.getAttribute("data-currency");
         checkPrice();
 
+        // Removes "selected" class from all links
+        navLinks.forEach(link => link.classList.remove("selected"))
+        // Adds "selected" class to link that was just clicked
+        this.classList.add("selected");
     })
 })
