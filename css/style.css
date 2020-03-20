@@ -12,8 +12,9 @@ body {
 }
 
 h1 {
-    font-size: 30vmin;
+    font-size: 15vmax;
     font-weight: 300;
+    margin-bottom: 0;
 }
 
 section {
