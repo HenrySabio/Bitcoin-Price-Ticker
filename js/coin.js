@@ -8,7 +8,7 @@ const checlPrice = () => {
     fetch(url)
         .then(res => res.json())
         .then(data => {
-            priceTag.innerHTML = data.bpi.USD.rate_float
+            priceTag.innerHTML = data.bpi.USD.rate_float.toFixed(2)
         })
 
 }
