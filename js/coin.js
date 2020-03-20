@@ -8,7 +8,7 @@ const checlPrice = () => {
     fetch(url)
         .then(res => res.json())
         .then(data => {
-            priceTag.innerHTML = data.bpi.USD.rate_float.toFixed(2)
+            priceTag.innerHTML = data.bpi[currency].rate_float.toFixed(2)
         })
 
 }
@@ -16,3 +16,12 @@ const checlPrice = () => {
 // Runs Function on load
 checlPrice()
 
+// Loop over nav links + click event
+const navLinks = document.querySelectorAll("nav a");
+navLinks.forEach(link => {
+    link.addEventListener("click", function () {
+        currency = this.getAttribute("data-currency");
+        checkPrice();
+
+    })
+})
