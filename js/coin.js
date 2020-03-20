@@ -1,10 +1,11 @@
 // Defines API URL and default currency state
 const url = "https://api.coindesk.com/v1/bpi/currentprice.json";
-const priceTag = document.querySelector("h1")
+const priceTag = document.querySelector("h1");
+const paragraphTag = document.querySelector("p");
 let currency = "USD";
 
 // Grabs current price from Coindesk API
-const checlPrice = () => {
+const checkPrice = () => {
     fetch(url)
         .then(res => res.json())
         .then(data => {
@@ -14,7 +15,7 @@ const checlPrice = () => {
 }
 
 // Runs Function on load
-checlPrice()
+checkPrice()
 
 // Loop over nav links + click event
 const navLinks = document.querySelectorAll("nav a");
@@ -24,8 +25,11 @@ navLinks.forEach(link => {
         checkPrice();
 
         // Removes "selected" class from all links
-        navLinks.forEach(link => link.classList.remove("selected"))
+        navLinks.forEach(link => link.classList.remove("selected"));
         // Adds "selected" class to link that was just clicked
         this.classList.add("selected");
+
+        // Update p tag to currently selected currency
+        paragraphTag.innerHTML = `${currency} per BTC`;
     })
 })
