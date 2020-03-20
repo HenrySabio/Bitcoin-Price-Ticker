@@ -23,3 +23,18 @@ section {
     justify-content: center;
     height: 100vh;
 }
+
+nav {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+}
+
+nav a {
+    color: #999;
+    text-decoration: none;
+}
+
+nav a.selected {
+    color: #fff;
+}
