@@ -6,24 +6,35 @@ let currency = "USD";
 
 // Grabs current price from Coindesk API
 const checkPrice = () => {
-    
     fetch(url)
-    .then(res => res.json())
-    .then(data => {
-        const originalContent = data.bpi[currency].rate_float.toFixed(2);
-        let num = 0
+        .then(res => res.json())
+        .then(data => {
+            const bitcoinPrice = data.bpi[currency].rate_float.toFixed(2);
+            let newContent = "";
+            let num = 0
+            const randChar = "abcdefghijklmnopqrstuvwxyz._$@!¢1234567890?".split("")
 
-        const addInterval = setInterval( () => {
-            num = num + 1
-            priceTag.innerHTML = originalContent.substring(0, num)
+            const addInterval = setInterval(() => {
+                num = num + 1
+                newContent = bitcoinPrice.substring(0, num)
 
-            if (originalContent == priceTag.innerHTML) {
-                clearInterval(addInterval)
-            }
-        }, 100 )
-    
+                if (bitcoinPrice == priceTag.innerHTML) {
+                    clearInterval(addInterval)
+                }
+            }, 100)
+
+            const randomInterval = setInterval(() => {
+                priceTag.innerHTML = newContent
+
+                for ( let i = newContent.length; i < bitcoinPrice.length; i++) {
+                    priceTag.innerHTML = priceTag.innerHTML + randChar[Math.floor(Math.random() * randChar.length)]
+                }
+
+                if (bitcoinPrice == priceTag.innerHTML) {
+                    clearInterval(randomInterval)
+                }
+            }, 50)
         })
-
 }
 
 // Runs Function on load
