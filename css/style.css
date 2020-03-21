@@ -28,6 +28,7 @@ nav {
     position: fixed;
     top: 30px;
     right: 30px;
+    float: right;
 }
 
 nav a {
