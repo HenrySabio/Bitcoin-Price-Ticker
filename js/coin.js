@@ -17,7 +17,7 @@ const checkPrice = () => {
             num = num + 1
             priceTag.innerHTML = originalContent.substring(0, num)
 
-            if (originalContent = priceTag.innerHTML) {
+            if (originalContent == priceTag.innerHTML) {
                 clearInterval(addInterval)
             }
         }, 100 )
