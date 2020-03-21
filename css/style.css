@@ -8,7 +8,7 @@ body {
     background-color: #000;
     color: #fff;
     margin: 40px auto;
-    width: 620px;
+    max-width: 620px;
 }
 
 h1 {
