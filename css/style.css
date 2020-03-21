@@ -42,7 +42,6 @@ nav a.selected {
 
 @media only screen 
   and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
   and (-webkit-min-device-pixel-ratio: 3) { 
       h1 {
           padding-top: 30px;
@@ -50,3 +49,10 @@ nav a.selected {
       }
 
 }
+
+@media (max-width: 640px) {
+    section h1 {
+        padding-top: 30px;
+        font-size: 6vmax;
+    }
+  }
