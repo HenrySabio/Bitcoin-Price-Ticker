@@ -6,10 +6,22 @@ let currency = "USD";
 
 // Grabs current price from Coindesk API
 const checkPrice = () => {
+    
     fetch(url)
-        .then(res => res.json())
-        .then(data => {
-            priceTag.innerHTML = data.bpi[currency].rate_float.toFixed(2)
+    .then(res => res.json())
+    .then(data => {
+        const originalContent = data.bpi[currency].rate_float.toFixed(2);
+        let num = 0
+
+        const addInterval = setInterval( () => {
+            num = num + 1
+            priceTag.innerHTML = originalContent.substring(0, num)
+
+            if (originalContent = priceTag.innerHTML) {
+                clearInterval(addInterval)
+            }
+        }, 100 )
+    
         })
 
 }
