@@ -12,7 +12,7 @@ const checkPrice = () => {
             const bitcoinPrice = data.bpi[currency].rate_float.toFixed(2);
             let newContent = "";
             let num = 0
-            const randChar = "abcdefghijklmnopqrstuvwxyz._$@!¢1234567890?".split("")
+            const randChar = "abcdefghijklmnopqrstuvwxyz._$@!¢%&®¥†∆øµπ?".split("")
 
             const addInterval = setInterval(() => {
                 num = num + 1
@@ -20,6 +20,7 @@ const checkPrice = () => {
 
                 if (bitcoinPrice == priceTag.innerHTML) {
                     clearInterval(addInterval)
+                    clearInterval(randomInterval)
                 }
             }, 100)
 
@@ -28,10 +29,6 @@ const checkPrice = () => {
 
                 for ( let i = newContent.length; i < bitcoinPrice.length; i++) {
                     priceTag.innerHTML = priceTag.innerHTML + randChar[Math.floor(Math.random() * randChar.length)]
-                }
-
-                if (bitcoinPrice == priceTag.innerHTML) {
-                    clearInterval(randomInterval)
                 }
             }, 50)
         })
