@@ -40,14 +40,10 @@ nav a.selected {
 }
 
 @media only screen 
-  and (min-device-width: 375px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
+  and (max-width: 500px)  { 
       section {
           height: 100%;
-      }
-
-      h1 {
-          padding-top: 50%;
+          margin-top: 50%;
       }
 
 }
