@@ -21,9 +21,26 @@
     </nav>
 
     <!-- Bitcoin price will be displayed here in selected currency -->
-    <section>
-        <h1>----.--</h1>
-        <p>USD per BTC</p>
+    <section class="flex-container">
+        <div class="content">
+            <div class="current-price">
+                <h1>----.--</h1>
+                <p>USD per BTC</p>
+            </div>
+            <div class="conversion-form">
+                <form class="currency-conversion">
+                    <div class="input col">
+                        <label for="convert">Amount to convert:</label><br>
+                        <input type="number" id="convert" name="convert" value="John"><br>
+                    </div>
+                    <div class="input col">
+                        <label for="converted-amount">Value in bitcoin:</label><br>
+                        <input type="number" id="converted-amount" name="converted-amount" value="Doe"><br><br>
+                    </div>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
     </section>
 
     <script src="./js/coin.js"></script>
