@@ -76,10 +76,9 @@ input.addEventListener('keydown', function (keypress) {
     } else {
         // If input is valid, updates input field on keyup
         input.addEventListener('keyup', function () {
-            let inputToConvert = parseInt(input.value);
+            let inputToConvert = parseFloat(input.value);
             // Takes input amount and converts to value in bitcoin at current price
             convertedValue.value = (inputToConvert / currentPrice).toFixed(8);
-            console.log(`${convertedValue.value} bitcoins`);
         })
     }
 });
