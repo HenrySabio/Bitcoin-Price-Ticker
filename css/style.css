@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
 
+:root {
+    --bg-color: #000;
+    --text-color: #fff;
+    --nav-color: #999;
+    --nav-selected: #fff;
+}
+
 body {
     font-family: Space Mono;
     font-size: 16px;
     line-height: 1.5;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
 }
 
@@ -28,21 +35,40 @@ div.content {
 }
 
 .current-price  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
 }
 
 
 .currency-conversion {
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    flex-basis: 1;
+    flex-basis: 2;
     justify-content: space-between;
-    padding: 10px;
     box-sizing: border-box;
 }
 
 .col {
-    width: 50%;
+    font-size: 2.3vmin;
+    width: 40%;
+    
+}
+
+input {
+    width: 100%;
+    height: 15px;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-style: none;
+}
+
+input.submit-button {
+
 }
 
 nav {
@@ -52,10 +78,10 @@ nav {
 }
 
 nav a {
-    color: #999;
+    color: var(--nav-color);
     text-decoration: none;
 }
 
 nav a.selected {
-    color: #fff;
+    color: var(--nav-selected);
 }
