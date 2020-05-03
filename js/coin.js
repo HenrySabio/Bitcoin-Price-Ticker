@@ -35,7 +35,6 @@ const checkPrice = () => {
                     priceTag.innerHTML = priceTag.innerHTML + randChar[Math.floor(Math.random() * randChar.length)]
                 }
             }, 50)
-
         })
 }
 
