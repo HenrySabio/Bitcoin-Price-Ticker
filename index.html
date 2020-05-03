@@ -24,20 +24,19 @@
     <section class="flex-container">
         <div class="content">
             <div class="current-price">
-                <h1>----.--</h1>
+                <h1 id="price">----.--</h1>
                 <p>USD per BTC</p>
             </div>
             <div class="conversion-form">
                 <form class="currency-conversion">
                     <div class="input col">
                         <label for="convert">Amount to convert:</label><br>
-                        <input type="number" id="convert" name="convert" value="John"><br>
+                        <input type="number" id="convert-value" name="convert" placeholder="Enter amount to convert here (Numbers Only)"><br>
                     </div>
                     <div class="input col">
                         <label for="converted-amount">Value in bitcoin:</label><br>
-                        <input type="number" id="converted-amount" name="converted-amount" value="Doe"><br><br>
+                        <input type="number" id="converted-value" name="converted-value" value="" placeholder="Converted amount will appear here"><br><br>
                     </div>
-                    <input class="submit-button" type="submit" value="Submit">
                 </form>
             </div>
         </div>
