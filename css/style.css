@@ -60,15 +60,11 @@ div.content {
 
 input {
     width: 100%;
-    height: 15px;
+    height: 20px;
     padding: 5px;
     margin-top: 10px;
     border-radius: 5px;
     border-style: none;
-}
-
-input.submit-button {
-
 }
 
 nav {
@@ -84,4 +80,15 @@ nav a {
 
 nav a.selected {
     color: var(--nav-selected);
+}
+
+@media (max-width: 600px) {
+    .currency-conversion {
+        flex-direction: column;
+    }
+
+    .col {
+        width: 100%;
+        margin-bottom: 30px;
+    }
 }
