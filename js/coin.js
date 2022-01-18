@@ -14,11 +14,11 @@ const checkPrice = () => {
         .then(data => {
             const bitcoinPrice = data.bpi[currency].rate_float.toFixed(2);
             let newContent = '';
-            let num = 0
-            const randChar = 'abcdefghijklmnopqrstuvwxyz._$@!¢%&®¥†∆øµπ?'.split('')
+            let num = 0;
+            const randChar = 'abcdefghijklmnopqrstuvwxyz._$@!¢%&®¥†∆øµπ?'.split('');
 
             const addInterval = setInterval(() => {
-                num = num + 1
+                num = num + 1;
                 newContent = bitcoinPrice.substring(0, num)
 
                 if (bitcoinPrice == priceTag.innerHTML) {
@@ -28,7 +28,7 @@ const checkPrice = () => {
             }, 100)
 
             const randomInterval = setInterval(() => {
-                priceTag.innerHTML = newContent
+                priceTag.innerHTML = newContent;
                 currentPrice = parseInt(newContent);
 
                 for (let i = newContent.length; i < bitcoinPrice.length; i++) {
@@ -39,7 +39,7 @@ const checkPrice = () => {
 }
 
 // Runs Function on load
-checkPrice()
+checkPrice();
 
 // Loop over nav links + click event
 const navLinks = document.querySelectorAll('nav a');
@@ -64,7 +64,7 @@ navLinks.forEach(link => {
 // Updates price every 60 seconds
 setInterval(function () {
     checkPrice();
-}, 60000)
+}, 60000);
 
 
 // Listens for keypress inside input field
